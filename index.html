@@ -1,1 +1,222 @@
-      
+      <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inter Pet - Cuidado de Mascotas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0fefc;
+      color: #333;
+    }
+
+    header {
+      background-color: #a0e6de;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      width: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #ffffff;
+      border-bottom: 2px solid #a0e6de;
+      padding: 10px 0;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      font-size: 14px;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 15px;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    input, button {
+      width: 90%;
+      padding: 12px;
+      margin: 10px auto;
+      display: block;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #ff9966;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 15px;
+      margin: 15px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      max-width: 400px;
+    }
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
+      object-fit: cover;
+    }
+
+    .chat-box {
+      background: #fff;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .msg {
+      margin: 8px;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 70%;
+    }
+
+    .from-user {
+      background-color: #d1f5f0;
+      margin-left: auto;
+    }
+
+    .from-caregiver {
+      background-color: #fcefe3;
+    }
+
+    .map {
+      margin-top: 15px;
+      background-color: #cceef0;
+      height: 160px;
+      border-radius: 12px;
+      text-align: center;
+      line-height: 160px;
+      color: #333;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 22px;
+    }
+
+    .img-illustration {
+      width: 90%;
+      max-width: 360px;
+      margin: 10px auto;
+      display: block;
+      border-radius: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Logo InterPet">
+    <h1>Inter Pet</h1>
+    <p>Cuidamos a tu mascota como tú lo harías 🐾</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('login')">Ingresar</button>
+    <button onclick="showSection('cuidadores')">Cuidadores</button>
+    <button onclick="showSection('chat')">Chat</button>
+    <button onclick="showSection('pago')">Pago</button>
+  </nav>
+
+  <main>
+    <section id="login" class="section active center">
+      <h2>Bienvenido</h2>
+      <img class="img-illustration" src="https://cdn.dribbble.com/users/177029/screenshots/15998764/media/9f5ab91b8780d2b3e95c746b469aa2a5.png" alt="Ilustración bienvenida">
+      <input type="email" placeholder="Correo electrónico">
+      <input type="password" placeholder="Contraseña">
+      <button onclick="showSection('cuidadores')">Entrar</button>
+    </section>
+
+    <section id="cuidadores" class="section">
+      <h2>Nuestros cuidadores</h2>
+      <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Javier">
+        <div>
+          <h3>Javier M.</h3>
+          <p>Servicio: Paseos</p>
+          <p class="stars">★★★★★</p>
+          <button onclick="showSection('chat')">Reservar</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Laura">
+        <div>
+          <h3>Laura P.</h3>
+          <p>Servicio: Cuido en casa</p>
+          <p class="stars">★★★★★</p>
+          <button onclick="showSection('chat')">Reservar</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="chat" class="section">
+      <h2>Chat con tu cuidador</h2>
+      <div class="chat-box">
+        <div class="msg from-user">¿Podrías cuidar a mi perrito este sábado?</div>
+        <div class="msg from-caregiver">¡Claro que sí! Será un placer. 😊</div>
+      </div>
+      <div class="map">[Ubicación del cuidador]</div>
+    </section>
+
+    <section id="pago" class="section center">
+      <h2>Pago confirmado</h2>
+      <img class="img-illustration" src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png" alt="Pago ok">
+      <p class="stars">★★★★★</p>
+      <p>Total: <strong>S/150.00</strong></p>
+      <p>Servicio: <strong>Cuido en casa</strong></p>
+      <button>Enviar valoración</button>
+    </section>
+  </main>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
